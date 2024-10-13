@@ -1,7 +1,6 @@
 package Parking;
 
 import java.util.Deque;
-import java.util.List;
 import java.util.concurrent.Semaphore;
 
 public class TowTruck implements Runnable {
@@ -9,7 +8,6 @@ public class TowTruck implements Runnable {
     Semaphore parkingSlots;
     Deque<String> towedCarsId;
     int speedUpCoefficient;
-    Deque<String> idOfParkedCars;
     TowTruck(Semaphore parkingSlots,  Deque<String> towedCarsId, int speedUpCoefficient){
         this.parkingSlots = parkingSlots;
         this.towedCarsId = towedCarsId;

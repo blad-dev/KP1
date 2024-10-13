@@ -1,11 +1,10 @@
 package Parking;
 
 import java.time.LocalTime;
-import java.util.concurrent.Semaphore;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Parking parking = new Parking(5, 8,
                 LocalTime.of(6, 0), LocalTime.of(20, 59), 3600);
 
