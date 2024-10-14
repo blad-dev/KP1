@@ -31,7 +31,7 @@ public class CarsAutoParker implements Runnable{
                     --i;
                 }
             }
-            while (Math.random() < 0.5) {
+            while (Math.random() < 0.8) {
                 String randomId = String.valueOf((int)(100 * Math.random()));
                 Cars.createParkingCar(parking, randomId, cars).start();
                 sleepFor((int)(Math.random() * 100));

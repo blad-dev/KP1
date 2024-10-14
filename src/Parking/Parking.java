@@ -2,6 +2,7 @@ package Parking;
 
 import java.time.LocalTime;
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.Semaphore;
 
 import static java.lang.Math.min;
@@ -41,13 +42,14 @@ public class Parking {
         currentTimeOfDay = TimeOfDay.NotSetYet;
         idOfParkedCars = new ArrayDeque<>();
         parkingSlots = new Semaphore(0);
-        towedCarsId = new ArrayDeque<>();
+        towedCarsId = new ConcurrentLinkedDeque<>();
         initAutoUpdater(speedUpCoefficient);
     }
     public void interruptAutoUpdater(){
         autoUpdater.interrupt();
     }
     public void resumeAutoUpdater(){
+        autoUpdater.interrupt();
         autoUpdater.reinitTimer();
         autoUpdater.run();
     }
